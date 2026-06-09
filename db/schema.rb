@@ -10,37 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_14_032827) do
-
+ActiveRecord::Schema[7.1].define(version: 2019_07_14_032827) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "apgs", force: :cascade do |t|
     t.text "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.bigint "year_id"
     t.index ["year_id"], name: "index_apgs_on_year_id"
   end
 
   create_table "auditors", force: :cascade do |t|
     t.text "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
   end
 
   create_table "bank_statements", force: :cascade do |t|
     t.text "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.bigint "year_id"
     t.index ["year_id"], name: "index_bank_statements_on_year_id"
   end
 
   create_table "bod_munites", force: :cascade do |t|
     t.text "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.bigint "year_id"
     t.index ["year_id"], name: "index_bod_munites_on_year_id"
   end
@@ -48,8 +47,8 @@ ActiveRecord::Schema.define(version: 2019_07_14_032827) do
   create_table "clients", force: :cascade do |t|
     t.text "name"
     t.text "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.string "year_end"
     t.bigint "auditor_id"
     t.index ["auditor_id"], name: "index_clients_on_auditor_id"
@@ -57,48 +56,48 @@ ActiveRecord::Schema.define(version: 2019_07_14_032827) do
 
   create_table "confirmations", force: :cascade do |t|
     t.text "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.bigint "year_id"
     t.index ["year_id"], name: "index_confirmations_on_year_id"
   end
 
   create_table "files_to_send_to_clients", force: :cascade do |t|
     t.text "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.bigint "year_id"
     t.index ["year_id"], name: "index_files_to_send_to_clients_on_year_id"
   end
 
   create_table "other_files", force: :cascade do |t|
     t.text "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.bigint "year_id"
     t.index ["year_id"], name: "index_other_files_on_year_id"
   end
 
   create_table "permenants", force: :cascade do |t|
     t.text "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.bigint "year_id"
     t.index ["year_id"], name: "index_permenants_on_year_id"
   end
 
   create_table "portals", force: :cascade do |t|
     t.text "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.bigint "year_id"
     t.index ["year_id"], name: "index_portals_on_year_id"
   end
 
   create_table "qb_reports", force: :cascade do |t|
     t.text "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.bigint "year_id"
     t.index ["year_id"], name: "index_qb_reports_on_year_id"
   end
@@ -106,46 +105,46 @@ ActiveRecord::Schema.define(version: 2019_07_14_032827) do
   create_table "qm_resources", force: :cascade do |t|
     t.text "templates"
     t.text "training"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
   end
 
   create_table "report_drafts", force: :cascade do |t|
     t.text "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.bigint "year_id"
     t.index ["year_id"], name: "index_report_drafts_on_year_id"
   end
 
   create_table "report_packages", force: :cascade do |t|
     t.text "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.bigint "year_id"
     t.index ["year_id"], name: "index_report_packages_on_year_id"
   end
 
   create_table "schedules", force: :cascade do |t|
     t.text "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.bigint "year_id"
     t.index ["year_id"], name: "index_schedules_on_year_id"
   end
 
   create_table "taxes", force: :cascade do |t|
     t.text "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.bigint "year_id"
     t.index ["year_id"], name: "index_taxes_on_year_id"
   end
 
   create_table "testings", force: :cascade do |t|
     t.text "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.bigint "year_id"
     t.index ["year_id"], name: "index_testings_on_year_id"
   end
@@ -153,8 +152,8 @@ ActiveRecord::Schema.define(version: 2019_07_14_032827) do
   create_table "users", force: :cascade do |t|
     t.string "user_name"
     t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
   end
 
   create_table "year_data", force: :cascade do |t|
@@ -172,13 +171,13 @@ ActiveRecord::Schema.define(version: 2019_07_14_032827) do
     t.string "Permenant"
     t.string "Other"
     t.string "Tax"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
   end
 
   create_table "years", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.bigint "client_id"
     t.string "number"
     t.index ["client_id"], name: "index_years_on_client_id"
